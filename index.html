@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sassou Décor - Accessoires de Mariage et Décoration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="banniere.jpg.JPG" type="image/jpeg">
+</head>
+<body>
+    <!-- En-tête avec navigation -->
+    <header>
+        <div class="container">
+            <div class="logo-section">
+                <img src="banniere.jpg.JPG" alt="Logo Sassou Décor" class="logo">
+                <h1>Sassou Décor</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#produits">Nos Produits</a></li>
+                    <li><a href="#panier">Panier <span id="cart-count">0</span></a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="admin-btn"><i class="fas fa-lock"></i> Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section héros -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <h2>Vente et location d'accessoires de mariage et de décor</h2>
+            <p>Élégance, raffinement et professionnalisme pour vos événements spéciaux</p>
+            <a href="#produits" class="btn">Voir nos produits</a>
+        </div>
+    </section>
+
+    <!-- Section produits -->
+    <section id="produits" class="products">
+        <div class="container">
+            <h2>Nos Produits</h2>
+            <div class="product-filter">
+                <button class="filter-btn active" data-category="all">Tous</button>
+                <button class="filter-btn" data-category="mariage">Mariage</button>
+                <button class="filter-btn" data-category="decor">Décoration</button>
+                <button class="filter-btn" data-category="vetements">Vêtements</button>
+                <button class="filter-btn" data-category="accessoires">Accessoires</button>
+            </div>
+            <div class="product-grid" id="product-container">
+                <!-- Les produits seront chargés dynamiquement ici -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section panier -->
+    <section id="panier" class="cart-section">
+        <div class="container">
+            <h2>Votre Panier</h2>
+            <div class="cart-container">
+                <div class="cart-items" id="cart-items">
+                    <!-- Les articles du panier seront ajoutés ici -->
+                    <p class="empty-cart">Votre panier est vide</p>
+                </div>
+                <div class="cart-summary">
+                    <h3>Résumé de la commande</h3>
+                    <div class="summary-details">
+                        <p>Sous-total: <span id="subtotal">$0.00</span></p>
+                        <p>Livraison: <span id="shipping">$10.00</span></p>
+                        <p class="total">Total: <span id="total">$0.00</span></p>
+                    </div>
+                    <button class="btn checkout-btn" id="checkout-btn">Passer la commande</button>
+                    <p class="payment-info">
+                        <i class="fas fa-mobile-alt"></i> Paiement via MonCash: <strong>+509 3490 2252</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section contact et informations -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact et Informations</h2>
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Adresse</h3>
+                    <p>#11, Rue Rigaud, Pétion-Ville</p>
+                    <p>Port-au-Prince, Haïti</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Téléphones</h3>
+                    <p>+509 4337 3434</p>
+                    <p>+509 3490 2252</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-wallet"></i>
+                    <h3>Paiement</h3>
+                    <p>MonCash: +509 3490 2252</p>
+                    <p>Paiement en dollars ($)</p>
+                </div>
+                <div class="info-card" id="extra-button-placeholder">
+                    <i class="fas fa-plus-circle"></i>
+                    <h3>Espace pour futur bouton</h3>
+                    <p>Cette zone peut être utilisée pour ajouter un autre bouton ou fonctionnalité à l'avenir</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boutons WhatsApp flottants -->
+    <div class="whatsapp-buttons">
+        <a href="https://wa.me/50943373434?text=Bonjour%20Sassou%20Décor,%20je%20voudrais%20passer%20une%20commande" 
+           class="whatsapp-btn order-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Commander
+        </a>
+        <a href="https://wa.me/50934902252?text=Bonjour%20Sassou%20Décor,%20j'ai%20une%20question%20sur%20vos%20produits" 
+           class="whatsapp-btn service-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Service Client
+        </a>
+    </div>
+
+    <!-- Fenêtre modale admin -->
+    <div class="modal" id="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Accès Administrateur</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="admin-login" id="admin-login">
+                    <h3><i class="fas fa-lock"></i> Connexion sécurisée</h3>
+                    <p>Veuillez entrer le mot de passe pour accéder à l'administration</p>
+                    <div class="password-input">
+                        <input type="password" id="admin-password" placeholder="Mot de passe administrateur">
+                        <button id="login-btn"><i class="fas fa-key"></i> Accéder</button>
+                    </div>
+                    <p class="error-msg" id="login-error"></p>
+                </div>
+                <div class="admin-panel" id="admin-panel" style="display: none;">
+                    <h3>Gestion des produits</h3>
+                    <div class="admin-actions">
+                        <button class="admin-btn" id="add-product-btn"><i class="fas fa-plus"></i> Ajouter un produit</button>
+                        <button class="admin-btn" id="refresh-products-btn"><i class="fas fa-sync"></i> Actualiser la liste</button>
+                        <button class="admin-btn" id="change-password-btn"><i class="fas fa-cog"></i> Changer mot de passe</button>
+                    </div>
+                    
+                    <div class="product-form" id="product-form" style="display: none;">
+                        <h4>Ajouter/Modifier un produit</h4>
+                        <div class="form-group">
+                            <label for="product-name">Nom du produit:</label>
+                            <input type="text" id="product-name" placeholder="Ex: Bouquet de fleurs">
+                        </div>
+                        <div class="form-group">
+                            <label for="product-price">Prix ($):</label>
+                            <input type="number" id="product-price" placeholder="Ex: 50" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="product-category">Catégorie:</label>
+                            <select id="product-category">
+                                <option value="mariage">Mariage</option>
+                                <option value="decor">Décoration</option>
+                                <option value="vetements">Vêtements</option>
+                                <option value="accessoires">Accessoires</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-image">Nom de l'image:</label>
+                            <input type="text" id="product-image" placeholder="Ex: bouquet-rose.jpg">
+                            <small>Placez l'image dans le dossier "images"</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-description">Description:</label>
+                            <textarea id="product-description" rows="3" placeholder="Description du produit"></textarea>
+                        </div>
+                        <div class="form-buttons">
+                            <button class="btn" id="save-product-btn">Enregistrer</button>
+                            <button class="btn btn-cancel" id="cancel-product-btn">Annuler</button>
+                        </div>
+                    </div>
+                    
+                    <div class="products-list" id="admin-products-list">
+                        <!-- Liste des produits pour l'admin -->
+                    </div>
+                    
+                    <div class="password-change-form" id="password-change-form" style="display: none;">
+                        <h4>Changer le mot de passe administrateur</h4>
+                        <div class="form-group">
+                            <label for="new-password">Nouveau mot de passe:</label>
+                            <input type="password" id="new-password" placeholder="Nouveau mot de passe">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirmer le mot de passe:</label>
+                            <input type="password" id="confirm-password" placeholder="Confirmer le mot de passe">
+                        </div>
+                        <div class="form-buttons">
+                            <button class="btn" id="save-password-btn">Enregistrer</button>
+                            <button class="btn btn-cancel" id="cancel-password-btn">Annuler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Modale pour ajouter un produit -->
+<div class="modal" id="add-product-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2><i class="fas fa-plus-circle"></i> Ajouter un nouveau produit</h2>
+            <span class="close-modal" id="close-add-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <!-- Étape 1: Vérification du mot de passe -->
+            <div id="password-step">
+                <h3><i class="fas fa-lock"></i> Accès sécurisé</h3>
+                <p>Pour ajouter un produit, veuillez entrer le mot de passe d'administration</p>
+                <div class="password-input">
+                    <input type="password" id="add-product-password" placeholder="Mot de passe">
+                    <button id="verify-password-btn"><i class="fas fa-key"></i> Vérifier</button>
+                </div>
+                <p class="error-msg" id="password-error"></p>
+            </div>
+            
+            <!-- Étape 2: Formulaire d'ajout de produit -->
+            <div id="product-form-step" style="display: none;">
+                <h3><i class="fas fa-camera"></i> Ajouter un produit depuis votre galerie</h3>
+                
+                <div class="form-group">
+                    <label for="product-name-input">Nom du produit *</label>
+                    <input type="text" id="product-name-input" placeholder="Ex: Bouquet de roses rouges">
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-price-input">Prix ($) *</label>
+                    <input type="number" id="product-price-input" placeholder="Ex: 45.00" step="0.01" min="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-category-select">Catégorie *</label>
+                    <select id="product-category-select">
+                        <option value="mariage">Mariage</option>
+                        <option value="decor">Décoration</option>
+                        <option value="vetements">Vêtements</option>
+                        <option value="accessoires">Accessoires</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-description-input">Description</label>
+                    <textarea id="product-description-input" rows="3" placeholder="Description du produit..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-image-upload">Photo du produit *</label>
+                    <div class="image-upload-container">
+                        <div class="image-preview" id="image-preview">
+                            <i class="fas fa-image"></i>
+                            <p>Aperçu de l'image apparaîtra ici</p>
+                        </div>
+                        <div class="upload-options">
+                            <input type="file" id="product-image-upload" accept="image/*" style="display: none;">
+                            <button type="button" id="browse-btn" class="upload-btn">
+                                <i class="fas fa-folder-open"></i> Parcourir
+                            </button>
+                            <button type="button" id="camera-btn" class="upload-btn">
+                                <i class="fas fa-camera"></i> Prendre une photo
+                            </button>
+                        </div>
+                        <small>Taille maximale : 5MB. Formats acceptés : JPG, PNG, JPEG</small>
+                    </div>
+                </div>
+                
+                <div class="form-buttons">
+                    <button class="btn" id="save-new-product-btn">
+                        <i class="fas fa-save"></i> Enregistrer le produit
+                    </button>
+                    <button class="btn btn-cancel" id="cancel-add-product-btn">
+                        <i class="fas fa-times"></i> Annuler
+                    </button>
+                </div>
+                
+                <div id="upload-progress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <p id="progress-text">Téléchargement en cours...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bouton flottant pour ajouter un produit -->
+<button class="add-product-btn" id="floating-add-btn">
+    <i class="fas fa-plus"></i> Ajouter un produit
+</button>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="banniere.jpg.JPG" alt="Logo Sassou Décor" class="footer-logo-img">
+                    <h3>Sassou Décor</h3>
+                    <p>Vente et location d'accessoires de mariage et de décor</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Produits</h4>
+                    <ul>
+                        <li>Pétrouque</li>
+                        <li>Bouquets de fleurs</li>
+                        <li>Robe de mariée</li>
+                        <li>Chemise</li>
+                        <li>Valise</li>
+                        <li>Chapeau</li>
+                        <li>Robe de soirée</li>
+                        <li>Robe pour enfant</li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> #11, Rue Rigaud, Pétion-Ville, Port-au-Prince, Haïti</p>
+                    <p><i class="fas fa-phone"></i> +509 4337 3434 / 3490 2252</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +509 4337 3434</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sassou Décor. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
