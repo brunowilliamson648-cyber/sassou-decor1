@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Bouquet de fleurs",
+        "price": 45.00,
+        "category": "mariage",
+        "image": "bouquet.jpg",
+        "description": "Magnifique bouquet de fleurs fraîches pour votre mariage"
+    },
+    {
+        "id": 2,
+        "name": "Robe de mariée",
+        "price": 350.00,
+        "category": "mariage",
+        "image": "robe-mariee.jpg",
+        "description": "Robe de mariée élégante et moderne"
+    },
+    {
+        "id": 3,
+        "name": "Pétrouque",
+        "price": 25.00,
+        "category": "accessoires",
+        "image": "petrouque.jpg",
+        "description": "Accessoire traditionnel pour la cérémonie"
+    },
+    {
+        "id": 4,
+        "name": "Chapeau élégant",
+        "price": 35.00,
+        "category": "accessoires",
+        "image": "chapeau.jpg",
+        "description": "Chapeau pour les invités ou la mariée"
+    },
+    {
+        "id": 5,
+        "name": "Décoration de table",
+        "price": 60.00,
+        "category": "decor",
+        "image": "decoration-table.jpg",
+        "description": "Ensemble de décoration pour table de réception"
+    },
+    {
+        "id": 6,
+        "name": "Robe de soirée",
+        "price": 120.00,
+        "category": "vetements",
+        "image": "robe-soiree.jpg",
+        "description": "Robe élégante pour soirée ou cérémonie"
+    },
+    {
+        "id": 7,
+        "name": "Chemise de cérémonie",
+        "price": 55.00,
+        "category": "vetements",
+        "image": "chemise.jpg",
+        "description": "Chemise élégante pour le marié ou les invités"
+    },
+    {
+        "id": 8,
+        "name": "Valise de voyage",
+        "price": 85.00,
+        "category": "accessoires",
+        "image": "valise.jpg",
+        "description": "Valise élégante pour le voyage de noces"
+    }
+]
